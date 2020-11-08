@@ -52,3 +52,11 @@
 
 // [1, 2, 3, 1, 3] => [1, 3, 1, 3]
 // 5. uniqu = [...new Set(array)];
+let x = [1, 2, 3, 1, 3]
+
+function getNotUnique(array) {
+    var map = new Map();
+    array.forEach(a => map.set(a, (map.get(a) || 0) + 1));
+    return array.filter(a => map.get(a) > 1);
+}
+
